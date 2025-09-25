@@ -10,21 +10,20 @@ from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
 from aiogram.types import Message
 
-from routes import route
+from handlers.routes import route
 
-BOT_TOKEN = ""
+BOT_TOKEN = "8336673216:AAHsi0V_uinUMyGm-8yogM74ybLdJ09xGI8"
 
 
 dp = Dispatcher()
+dp.include_router(router=route)
 
-
-@dp.message(CommandStart())
-async def bot_start(message: Message) -> None:
-    await message.answer("Hello")
+# @dp.message(CommandStart())
+# async def bot_start(message: Message) -> None:
+#     await message.answer("Hello")
 
 async def main() -> None:
     bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-    dp.include_router(router=route)
     await dp.start_polling(bot)
 
 
