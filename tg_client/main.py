@@ -12,7 +12,7 @@ from aiogram.types import Message
 
 from handlers.routes import route
 
-BOT_TOKEN = "8336673216:AAHsi0V_uinUMyGm-8yogM74ybLdJ09xGI8"
+BOT_TOKEN = ""
 
 
 dp = Dispatcher()
